@@ -1,0 +1,21 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: xMall-admin-system
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/xmall?useSSL=false
+    username: root
+    password: root
+  mvc:
+    view:
+      prefix: /views/
+      suffix: .html
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+jwt:
+  secret: xmall@Login(Auth}*^31)&heiMa% # 登录校验的密钥
+  pubKeyPath: G:/app/xmall/rsa/rsa.pub # 公钥地址
+  priKeyPath: G:/app/xmall/rsa/rsa.pri # 私钥地址
+  expire: 30 # 过期时间,单位分钟
+  cookieName: XMALL_TOKEN

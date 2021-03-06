@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.xMallAdminSystem.mapper.UserMapper">
+  <select id="selectWithUsername" parameterType="String"
+    resultType="com.demo.xMallAdminSystem.pojo.AdminUser">
+    select id,username,`password`,role from admin_user where username=#{username}
+  </select>
+  <select id="getUserInfo" parameterType="com.demo.xMallAdminSystem.pojo.AdminUser"
+    resultType="com.demo.xMallAdminSystem.pojo.UserInfo">
+    select id,username from admin_user where username=#{username} and password=#{password}
+  </select>
+</mapper>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>xMall后台管理系统-用户登录</title>
+  <link rel="stylesheet" type="text/css" href="/themes/default/easyui.css">
+  <link rel="stylesheet" type="text/css" href="/themes/icon.css">
+  <link rel="stylesheet" type="text/css" href="/demo/demo.css">
+  <script type="text/javascript" src="/jquery.min.js"></script>
+  <script type="text/javascript" src="/jquery.easyui.min.js"></script>
+  <script src="js/loadMenu.js"></script>
+  <link rel="stylesheet" href="css/wu.css">
+  <script>
+    submitForm=function(){
+      $("#form").submit(function(e){
+        alert("Submitted");
+      });
+    }
+  </script>
+</head>
+<body>
+<h2>用户登录</h2>
+<div class="demo-info">
+  <div class="demo-tip icon-tip"></div>
+  <div>填写表单,然后提交.</div>
+</div>
+
+<div style="margin:10px 0;"></div>
+<div class="easyui-panel" title="登录窗体" style="width:400px">
+  <div style="padding:10px 0 10px 60px">
+    <form id="form" action="/login" method="post">
+      <table>
+        <tr>
+          <td>姓名:</td>
+          <td>
+            <input class="easyui-validatebox" type="text" name="username" data-options="required:true" />
+          </td>
+        </tr>
+        <tr>
+          <td>密码:</td>
+          <td>
+            <input class="easyui-validatebox" type="password" name="password" data-options="required:true"></input>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div style="text-align:center;padding:5px">
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()">提交</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">重置</a>
+  </div>
+</div>
+</body>
